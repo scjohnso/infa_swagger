@@ -1,0 +1,96 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "www.alphavantage.co",
+  "basePath" : "",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "query" : {
+      "get" : {
+        "tags" : [ "symbol_search" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "symbol_search",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "keywords",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "apikey",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "function",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/symbol_search"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "symbol_search##bestMatches" : {
+      "properties" : {
+        "1. symbol" : {
+          "type" : "string"
+        },
+        "2. name" : {
+          "type" : "string"
+        },
+        "3. type" : {
+          "type" : "string"
+        },
+        "4. region" : {
+          "type" : "string"
+        },
+        "5. marketOpen" : {
+          "type" : "string"
+        },
+        "6. marketClose" : {
+          "type" : "string"
+        },
+        "7. timezone" : {
+          "type" : "string"
+        },
+        "8. currency" : {
+          "type" : "string"
+        },
+        "9. matchScore" : {
+          "type" : "string"
+        }
+      }
+    },
+    "symbol_search" : {
+      "properties" : {
+        "bestMatches" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/symbol_search##bestMatches"
+          }
+        }
+      }
+    }
+  }
+}
